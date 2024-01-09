@@ -15,8 +15,17 @@ slope_2 = p2_y/p2_x
 k1 = (slope_1 ** 2) + 1
 k2 = (slope_2 ** 2) + 1
 
-angle_1 = asin(sqrt(k1)/k1)
-angle_2 = asin(sqrt(k2)/k2)
+if (p1_y > 0 and p2_y > 0) or (p1_y < 0 and p2_y < 0):
+    angle_1 = asin(sqrt(k1)/k1)
+    angle_2 = asin(sqrt(k2)/k2)
+
+elif (p1_y < 0 and p2_y > 0) or (p1_y > 0 and p2_y < 0):
+    angle_1 = asin(-sqrt(k1)/k1)
+    angle_2 = asin(-sqrt(k2)/k2)
+
+else:
+  angle_1 = 0
+  angle_2 = 0
 
 rotation = angle_2 - angle_1
 
