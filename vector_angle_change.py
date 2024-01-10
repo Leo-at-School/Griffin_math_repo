@@ -2,7 +2,6 @@ from math import atan, pi
 
 solution = []
 
-
 #Example point 1
 x1 = -2
 y1 = 5
@@ -67,11 +66,7 @@ elif x2 < 0 and y2 < 0:
     
 elif x2 > 0 and y2 < 0:
     angle_2 = (2*pi) - atan(abs(slope_2))
-    
- 
 
-print(angle_1)
-print(angle_2)
 
 angle_1 *= (180/pi)
 angle_2 *= (180/pi)
