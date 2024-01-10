@@ -2,44 +2,88 @@ from math import atan, pi
 
 solution = []
 
+
 #Example point 1
-p1_x = -2.224
-p1_y = -6.8341
+x1 = -2
+y1 = 5
 #Example point 2
-p2_x = 2.6
-p2_y = 5.3225
+x2 = 5
+y2 = 2
 
-#Points as a slope
-slope_1 = p1_y/p1_x
-slope_2 = p2_y/p2_x
+#Point 1 pre-processing
+if x1 == 0 and y1 > 0:
+    angle_1 = pi/2
+    
+elif x1 == 0 and y1 < 0:
+    angle_1 = -pi/2
 
-angle_1 = (180/pi) * atan(slope_1)
-angle_2 = (180/pi) * atan(slope_2)
+elif x1 > 0 and y1 == 0:
+    angle_1 = 0
+    
+elif x1 < 0 and y1 == 0:
+    angle_1 = 180
+    
+else:
+    slope_1 = y1/x1
 
-if angle_1 < 0:
-    angle_1 = -1 * angle_1 + 90
+#Point 2 pre-processing
+if x2 == 0 and y2 > 0:
+    angle_2 = pi/2
+    
+elif x2 == 0 and y2 < 0:
+    angle_2 = -pi/2
+    
+elif x2 > 0 and y2 == 0:
+    angle_2 = 0
+    
+elif x2 < 0 and y2 == 0:
+    angle_2 = 180
+    
+else:
+    slope_2 = y2/x2
 
-elif p1_y < 0:
-    angle_1 += 180
+#Angle off x axis for point 2
+if x1 > 0 and y1 > 0:
+    angle_1 = atan(slope_1)
+    
+elif x1 < 0 and y1 > 0:
+    angle_1 = pi - atan(abs(slope_1))
+    
+elif x1 < 0 and y1 < 0:
+    angle_1 = ((3*pi)/2) - atan(slope_1)
+    
+elif x1 > 0 and y1 < 0:
+    angle_1 = (2*pi) - atan(abs(slope_1))
 
-if angle_2 < 0:
-    angle_2 = -1 * angle_2 + 90
+#Angle off x axis for point 2
+if x2 > 0 and y2 > 0:
+    angle_2 = atan(slope_2)
+    
+elif x2 < 0 and y2 > 0:
+    angle_2 = pi - atan(abs(slope_2))
+    
+elif x2 < 0 and y2 < 0:
+    angle_2 = ((3*pi)/2) - atan(slope_2)
+    
+elif x2 > 0 and y2 < 0:
+    angle_2 = (2*pi) - atan(abs(slope_2))
+    
+ 
 
-elif p2_y < 0:
-    angle_2 += 180
+print(angle_1)
+print(angle_2)
+
+angle_1 *= (180/pi)
+angle_2 *= (180/pi)
+
 
 solution.append(angle_1)
 solution.append(angle_2)
 angle_difference = solution[1] - solution[0]
 
-if angle_difference > 180:
-    angle_difference = 360 - angle_difference
-
-elif angle_difference < -180:
-    angle_difference = 360 + angle_difference
 
 print()
-print("point 1: (" + str(p1_x) + "," + str(p1_y) + ") ⇒ " + str(solution[0]) + " degrees off the x axis")
-print("Point 2: (" + str(p2_x) + "," + str(p2_y) + ") ⇒ " + str(solution[1]) + " degrees off the x axis")
+print("point 1: (" + str(x1) + "," + str(y1) + ") ⇒ " + str(solution[0]) + " degrees off the x axis")
+print("Point 2: (" + str(x2) + "," + str(y2) + ") ⇒ " + str(solution[1]) + " degrees off the x axis")
 print()
 print("Point 2 is rotated " + str(angle_difference) + " degrees relative to point 1")
