@@ -67,18 +67,15 @@ elif x2 < 0 and y2 < 0:
 elif x2 > 0 and y2 < 0:
     angle_2 = (2*pi) - atan(abs(slope_2))
 
-
+#Convert to degrees
 angle_1 *= (180/pi)
 angle_2 *= (180/pi)
 
-
-solution.append(angle_1)
-solution.append(angle_2)
-angle_difference = solution[1] - solution[0]
-
+#Find how much each is rotated (+ rotation: clockwise, - rotation: counterclockwise)
+angle_difference = angle_2 - angle_1
 
 print()
-print("point 1: (" + str(x1) + "," + str(y1) + ") ⇒ " + str(solution[0]) + " degrees off the x axis")
-print("Point 2: (" + str(x2) + "," + str(y2) + ") ⇒ " + str(solution[1]) + " degrees off the x axis")
+print("point 1: (" + str(x1) + "," + str(y1) + ") ⇒ " + str(angle_1) + " degrees off the x axis")
+print("Point 2: (" + str(x2) + "," + str(y2) + ") ⇒ " + str(angle_2) + " degrees off the x axis")
 print()
 print("Point 2 is rotated " + str(angle_difference) + " degrees relative to point 1")
