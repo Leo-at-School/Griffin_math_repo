@@ -17,14 +17,11 @@ if x1 == 0 and y1 > 0:
 elif x1 == 0 and y1 < 0:
     angle_1 = -pi/2
 
-elif x1 > 0 and y1 == 0:
+elif (x1 > 0 and y1 == 0) or (x1 == 0 and y1 == 0):
     angle_1 = 0
     
 elif x1 < 0 and y1 == 0:
     angle_1 = pi
-
-elif x1 == 0 and y1 == 0:
-    angle_1 = 0
 
 else:
     slope_1 = y1/x1
@@ -36,14 +33,11 @@ if x2 == 0 and y2 > 0:
 elif x2 == 0 and y2 < 0:
     angle_2 = -pi/2
     
-elif x2 > 0 and y2 == 0:
+elif  (x2 > 0 and y2 == 0) or (x2 == 0 and y2 == 0):
     angle_2 = 0
     
 elif x2 < 0 and y2 == 0:
     angle_2 = pi
-    
-elif x2 == 0 and y2 == 0:
-    angle_1 = 0
     
 else:
     slope_2 = y2/x2
