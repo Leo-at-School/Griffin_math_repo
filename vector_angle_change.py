@@ -1,7 +1,5 @@
 from math import atan, pi
 
-solution = []
-
 #Example point 1
 x1 = -2
 y1 = 5
