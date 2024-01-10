@@ -19,8 +19,14 @@ angle_2 = (180/pi) * atan(slope_2)
 if angle_1 < 0:
     angle_1 = -1 * angle_1 + 90
 
+elif p1_y < 0:
+    angle_1 += 180
+
 if angle_2 < 0:
     angle_2 = -1 * angle_2 + 90
+
+elif p2_y < 0:
+    angle_2 += 180
 
 solution.append(angle_1)
 solution.append(angle_2)
