@@ -30,9 +30,16 @@ elif p2_y < 0:
 
 solution.append(angle_1)
 solution.append(angle_2)
+angle_difference = solution[1] - solution[0]
+
+if angle_difference > 180:
+    angle_difference = 360 - angle_difference
+
+elif angle_difference < -180:
+    angle_difference = 360 + angle_difference
 
 print()
 print("point 1: (" + str(p1_x) + "," + str(p1_y) + ") ⇒ " + str(solution[0]) + " degrees off the x axis")
 print("Point 2: (" + str(p2_x) + "," + str(p2_y) + ") ⇒ " + str(solution[1]) + " degrees off the x axis")
 print()
-print("Point 2 is rotated " + str(solution[1] - solution[0]) + " degrees relative to point 1")
+print("Point 2 is rotated " + str(angle_difference) + " degrees relative to point 1")
