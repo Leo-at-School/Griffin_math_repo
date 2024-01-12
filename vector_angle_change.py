@@ -47,7 +47,7 @@ elif x1 < 0 and y1 > 0:
     angle_1 = pi - atan(abs(slope_1))
     
 elif x1 < 0 and y1 < 0:
-    angle_1 = ((3*pi)/2) - atan(slope_1)
+    angle_1 = pi + atan(slope_1)
     
 elif x1 > 0 and y1 < 0:
     angle_1 = (2*pi) - atan(abs(slope_1))
@@ -60,7 +60,7 @@ elif x2 < 0 and y2 > 0:
     angle_2 = pi - atan(abs(slope_2))
     
 elif x2 < 0 and y2 < 0:
-    angle_2 = ((3*pi)/2) - atan(slope_2)
+    angle_2 = pi + atan(slope_2)
     
 elif x2 > 0 and y2 < 0:
     angle_2 = (2*pi) - atan(abs(slope_2))
